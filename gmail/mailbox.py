@@ -44,6 +44,8 @@ class Mailbox():
         kwargs.get('label') and search.extend(['X-GM-LABELS', kwargs.get('label')])
         kwargs.get('attachment') and search.extend(['HAS', 'attachment'])
 
+        kwargs.get('uid') and search.extend(['X-GM-MSGID', kwargs.get('uid')])
+
         kwargs.get('query') and search.extend([kwargs.get('query')])
 
         emails = []
